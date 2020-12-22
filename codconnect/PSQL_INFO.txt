@@ -1,0 +1,28 @@
+see https://www.datacamp.com/community/tutorials/10-command-line-utilities-postgresql
+see https://snapcraft.io/install/dbeaver-ce/ubuntu to install a database browser
+see https://docs.boundlessgeo.com/suite/1.1.1/dataadmin/pgGettingStarted/firstconnect.html
+see https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+see https://www.guru99.com/postgresql-create-database.html
+
+Creating database
+sudo -u postgres psql
+postgres=# create database mydb;
+postgres=# create user myuser with encrypted password 'mypass';
+postgres=# grant all privileges on database mydb to myuser;
+
+-- CHange Last value of Sequence
+SELECT setval('auth_user_details_internal_id_seq', 3, true);
+
+>pg_dump -h localhost -U admin -d webmondb >webmondb_data_20201001.sql
+>which psql => /usr/bin/psql
+>psql --version => psql (PostgreSQL) 10.12 (Ubuntu 10.12-0ubuntu0.18.04.1)
+>psql -h [HOSTNAME] -p [PORT] -U [USERNAME] -W -d [DATABASENAME]
+>psql postgres://[USERNAME]:[PASSWORD]@[HOSTNAME]:[PORT]/[DATABASENAME]?sslmode=require
+>psql -h localhost -U postgres -W -d postgres
+Password for user postgres: military
+>psql -h localhost -U admin -W -d webmondb
+Password for user admin: military
+psql (10.12 (Ubuntu 10.12-0ubuntu0.18.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+webmondb=>
